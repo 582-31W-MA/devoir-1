@@ -1,0 +1,130 @@
+@import url("reset.css");
+
+@font-face {
+	font-family: "Marist";
+	src: url("/assets/fonts/ABCMaristVariable-Trial.woff");
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Marist";
+	src: url("/assets/fonts/ABCMaristVariableItalic-Trial.woff");
+	font-style: italic;
+}
+
+body {
+	font-family: "Marist", Georgia, 'Times New Roman', Times, serif;
+	-webkit-font-smoothing: antialiased;
+	font-feature-settings: "onum";
+	line-height: 1.3;
+	margin: 1rem 2rem;
+	counter-reset: example;
+}
+
+h1 {
+	font-size: 2rem;
+}
+
+.examples li {
+	display: inline;
+}
+
+ol, .remark {
+	position: relative;
+}
+
+ol ol, .remark {
+	margin-top: 1rem;
+	margin-left: 4rem;
+}
+
+ol::before, .examples::before, .remark::before {
+	position: absolute;
+	left: -4rem;
+	width: 3.5rem;
+	text-align: right;
+	color: crimson;
+}
+
+.text, .prefix, .bracketed_prefix {
+	display: inline;
+}
+
+.text:after {
+	content: " :";
+}
+
+.roman {
+	counter-increment: roman;
+}
+
+.roman::before {
+	font-weight: 600;
+	content: counter(roman, upper-roman);
+}
+
+.letter {
+	counter-increment: letter;
+}
+
+.letter::before {
+	font-weight: 600;
+	content: counter(letter, upper-latin);
+}
+
+.dash::before {
+	content: "—";
+}
+
+.diamond::before {
+	content: "◊";
+}
+
+.examples {
+	counter-increment: example;
+}
+
+.examples::before {
+	content: counter(example);
+}
+
+.author::after, .title::after, .year:after {
+	content: ",";
+}
+
+.excerpt {
+	display: inline;
+}
+
+.author {
+	font-feature-settings: "smcp";
+}
+
+.title {
+	font-style: italic;
+}
+
+.page::before {
+	content: "p. ";
+}
+
+.page:after {
+	content: ".";
+}
+
+.prefix {
+	font-style: italic;
+}
+
+.bracketed_prefix:before {
+	content: "[";
+}
+
+.bracketed_prefix:after {
+	content: "]";
+}
+
+.remark::before {
+	content: "Rem. ";
+	font-weight: 600;
+}
